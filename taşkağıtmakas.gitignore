@@ -1,0 +1,28 @@
+import random
+
+def taş_kağıt_makas():
+    seçenekler = ["Taş", "Kağıt", "Makas"]
+    bilgisayar_seçimi = random.choice(seçenekler)
+
+    kullanıcı_seçimi = input("Taş, Kağıt, ya da Makas? ").capitalize()
+
+    print(f"Bilgisayarın seçimi: {bilgisayar_seçimi}")
+    print(f"Sizim seçiminiz: {kullanıcı_seçimi}")
+
+    if kullanıcı_seçimi == bilgisayar_seçimi:
+        print("Berabere!")
+    elif (
+        (kullanıcı_seçimi == "Taş" and bilgisayar_seçimi == "Makas") or
+        (kullanıcı_seçimi == "Kağıt" and bilgisayar_seçimi == "Taş") or
+        (kullanıcı_seçimi == "Makas" and bilgisayar_seçimi == "Kağıt")
+    ):
+        print("Siz kazandınız!")
+    else:
+        print("Bilgisayar kazandı!")
+
+while True:
+    taş_kağıt_makas()
+
+    devam_et = input("Başka bir oyun oynamak istiyor musunuz? (Evet / Hayır): ")
+    if devam_et.lower() != "evet":
+        break
